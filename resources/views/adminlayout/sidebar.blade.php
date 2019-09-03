@@ -17,7 +17,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ url('admin/uploadDocument') }}">
+          <a href="{{ url('admin/profileList') }}">
             <i class="fa fa-users"></i><span>Client Profile</span>
             <span class="pull-right-container"></span>
           </a>
