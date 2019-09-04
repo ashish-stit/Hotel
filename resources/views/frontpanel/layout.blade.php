@@ -12,7 +12,8 @@
             </div>
         </div>
       </div>
-        <!--<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
+       <!--  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+       <script src="{{ asset('public/js/ajax.js') }}"></script>
         <script src="{{ asset('public/js/jquery.min.js')}}" ></script>
 <script src="{{ asset('public/js/modernizr.js')}}" type="text/javascript"></script>
 <script src="{{ asset('public/js/script.js')}}" type="text/javascript"></script>

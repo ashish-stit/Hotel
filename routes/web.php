@@ -12,10 +12,13 @@
 */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', function () {
+Route::get('/upload', 'HomeController@index')->name('upload');
+Route::get('/home', function () {
     return view('welcome');
 });
-Route::get('/admin/add','AdminController@dashboard')->name('admin.add');
-// Route::get('admin/dashboard','AdminController@showlist')->('admin')
-
+Route::get('/admin/add', 'AdminController@dashboard')->name('admin.add');
+Route::get('/admin/registered', 'AdminController@adddocs')->name('admin.registered');
+Route::get('/admin/profileList', 'AdminController@addprofile')->name('admin.profileList');
+Route::post('/admin/saveProfileList', 'AdminController@storeProfile');
+Route::post('/admin/EditProfile','AdminController@EditProfiles');
+Route::get('/deleteProfile/{id}', 'AdminController@profileDelete')->name('/deleteProfile');

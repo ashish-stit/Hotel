@@ -6,7 +6,7 @@
 
   
    <head>
-      <title>Customer Dashboard</title>
+      <title>Hotel</title>
       @include('adminlayout.head')
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -73,5 +73,6 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('public/dist/js/demo.js') }}"></script>
 <script src="{{ asset('public/js/script.js') }}"></script>
+<script src="{{ asset('public/js/ajax.js') }}"></script>
 </body>
 </html>

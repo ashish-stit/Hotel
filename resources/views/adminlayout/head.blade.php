@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('public/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <script src="{{ asset('public/js/ajax.js') }}"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('public/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
