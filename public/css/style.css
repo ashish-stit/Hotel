@@ -1249,10 +1249,10 @@ label::after {
 .scroll-to {
     float: left;
     text-align: center;
-    width: 130px;
-    height: 130px;
+    width: 90px;
+    height: 90px;
     border: 2px solid #ffffff;
-    margin-top: -65px;
+    margin-top: -47px;
     z-index: 22;
     position: relative;
     
@@ -11084,8 +11084,8 @@ footer.ft .scrollup {
     color: #222222;
 }
 .forsticky.sticky .menu-sec {
-    margin-top: 23px;
-    margin-bottom: 17px;
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 .forsticky.sticky .post-job-btn:hover {
     background: #fb236a;
@@ -11351,7 +11351,7 @@ footer.ft .scrollup {
 .responsive-menubar {
     float: left;
     width: 100%;
-    padding: 30px 0;
+    padding: 15px 0;
 }
 .res-logo {
     float: left;
@@ -11360,7 +11360,7 @@ footer.ft .scrollup {
     float: right;
     position: relative;
 }
-.responsivemenu {
+.mobile-menu {
     float: left;
     width: 100%;
     margin-top: 40px;
@@ -11456,18 +11456,18 @@ footer.ft .scrollup {
     font-size: 25px;
     padding: 11px 20px;
 }
-.responsivemenu > ul {
+.mobile-menu > ul {
     float: left;
     width: 100%;
     margin: 0;
 }
-.responsivemenu > ul > li {
+.mobile-menu > ul > li {
     float: left;
     width: 100%;
     margin: 15px 0;
     position: relative;
 }
-.responsivemenu > ul > li > a {
+.mobile-menu > ul > li > a {
     float: left;
     width: 100%;
     font-family: Open Sans;
@@ -11476,24 +11476,8 @@ footer.ft .scrollup {
     padding-right: 30px;
     position: relative;
 }
-.responsivemenu > ul > li.menu-item-has-children > a::before {
-    position: absolute;
-    right: 0;
-    top: 13px;
-    width: 20px;
-    height: 1px;
-    background: #ffffff;
-    content: "";
-}
-.responsivemenu > ul > li.menu-item-has-children > a::after {
-    position: absolute;
-    right: 10px;
-    top: 4px;
-    width: 1px;
-    height: 20px;
-    content: "";
-    background: #ffffff;
-}
+
+
 .responsivemenu > ul > li ul {
     float: left;
     width: 100%;
@@ -11585,8 +11569,7 @@ footer.ft .scrollup {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
 
 }
-
-.new-slide img{ position: absolute; bottom: 0px; right: 0px; opacity: 0.20;}
+.new-slide img{ position: absolute; bottom: 0px; right: 0px; opacity: 0.20;width: 100%;}
 
 
 
@@ -11823,9 +11806,18 @@ section.about {
     border-bottom: 2px solid;
     width: fit-content;
     padding-bottom: 6px;}
+
+
+
+
+
+
 @media (max-width: 1200px){
 .res-logo > a img {
     float: left !important;
     width: 40px !important;
+}
+.res-openmenu {
+    padding: 17px 20px !important;
 }
 }
