@@ -6,7 +6,7 @@
 
   
    <head>
-      <title>Customer Dashboard</title>
+      <title>Hotel</title>
       @include('adminlayout.head')
     </head>
     <body class="hold-transition skin-blue sidebar-mini">

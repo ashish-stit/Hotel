@@ -35,10 +35,10 @@
 					<td>{{ $profile->education }}</td>
 					<td>{{ $profile->resume }}</td>
 					<td>
-						<a id="{{ $profile->id }}" class="editProfile " style="margin-right: 1rem; background: #337ab7; padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;">
+						<a id="{{ $profile->id }}" class="editProfile" style="margin-right: 1rem; background: #337ab7; padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;">
 							<i class="fa fa-edit" style="font-size: 15px; color: #fff;"></i></a>
 
-							<a href="" class="btn btn-danger removeProfile" style="padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;"><i class="fa fa-trash"></i></a>
+							<a href="{{ url('/deleteProfile',$profile->id) }}" class="btn btn-danger removeProfile" style="padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;"><i class="fa fa-trash"></i></a>
 						</td>
 					</tr>
 					@endforeach

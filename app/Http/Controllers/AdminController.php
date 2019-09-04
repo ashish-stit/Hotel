@@ -41,20 +41,25 @@ class AdminController extends Controller
 		}
 	}
 	public function EditProfiles(Request $request){
-		if($request->ajax()){
-			$id=$request->id;
-			$profEdit = profile_model::where('id', $id)->first();
-			if($profEdit){
-				return response()->json(array('message', 'success', 'prof_Edit' => $profEdit));
-			}else{
-				return response()->json(array('error', 'Something went wrong!!'));
-			}
-		}
-	}
+		if ($request->ajax()) {
+        $id = $request->proflId;
+        $profEdit = profile_model::where('id', $id)->first();
+        if ($profEdit) {
+            return response()->json(array('message' => 'success', 'prof_Edit' => $profEdit));
+        } else {
+            return response()->json(array('error' => 'Something went Wrong!!'));
+        }
+    }
+}
 	public function profileDelete($id){
 		$removeProfile =  profile_model::find($id);
 		if($removeProfile->delete()){
-			echo "deleted";
+			return redirect('admin/profileList');
+		}
+	}
+	public function updateProfile(){
+		if($request->isMethod('post')) && $request->ajax()){
+
 		}
 	}
 }

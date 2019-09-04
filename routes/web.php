@@ -21,4 +21,4 @@ Route::get('/admin/registered', 'AdminController@adddocs')->name('admin.register
 Route::get('/admin/profileList', 'AdminController@addprofile')->name('admin.profileList');
 Route::post('/admin/saveProfileList', 'AdminController@storeProfile');
 Route::post('/admin/EditProfile','AdminController@EditProfiles');
-Route::delete('/deleteProfile', 'AdminController@profileDelete');
+Route::get('/deleteProfile/{id}', 'AdminController@profileDelete')->name('/deleteProfile');
