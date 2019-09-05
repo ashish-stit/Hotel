@@ -1342,6 +1342,25 @@ label::after {
     padding-bottom: 30px;
     border-bottom: 1px solid #e8ecec;
     border-right: 1px solid #e8ecec;
+     padding: 30px;
+}
+.p-category > a img{margin: auto;
+    display: -webkit-box;
+        border-radius: 50px;
+}
+.p-category > a span{white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+        margin-bottom: 10px;
+}
+.p-category > a button{
+    display: block;
+    clear: both;
+    text-align: center;
+    margin: auto;
+    width: 80px;
+   float: none;
 }
 .p-category > a i {
     float: left;
@@ -1354,7 +1373,7 @@ label::after {
     float: left;
     width: 100%;
     font-family: Quicksand;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: #232323;
     margin-top: 18px;

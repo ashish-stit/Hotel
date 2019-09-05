@@ -24,10 +24,9 @@
                                             <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
                                                 <div class="job-field">
                                                     <select data-placeholder="City, province or region" class="chosen-city">
-                                                        <option>New York </option>
-                                                        <option>Istanbul</option>
-                                                        <option>London</option>
-                                                        <option>Russia</option>
+                                                        <option>select</option>
+                                                        <option>Experience</option>
+                                                        <option>Hotel</option>
                                                     </select>
                                                     <i class="fa fa-map-marker"></i>
                                                 </div>
@@ -53,93 +52,23 @@
     <section id="scroll-here">
         <div class="block">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="heading">
-                            <h2>Popular Categories</h2>
-                            <span>37 jobs live - 0 added today.</span>
-                        </div><!-- Heading -->
-                        <div class="cat-sec">
+                       <div class="row">
                             <div class="row no-gape">
+                            @foreach($details as $profile)
+
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-bullhorn"></i>
-                                            <span>Design, Art & Multimedia</span>
-                                            <p>(22 open positions)</p>
+                                        <a title="">
+                                            <img src="{{URL::asset('public/image/'.$profile->resume) }}" height="100px" width="100px">
+                                            <span>{{$profile->objective}}</span>
+                                            <button type="submit" class="btn btn-primary ProfileView" id="PreviewProfile">More...</button>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-graduation-cap"></i>
-                                            <span>Education Training</span>
-                                            <p>(6 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-line-chart "></i>
-                                            <span>Accounting / Finance</span>
-                                            <p>(3 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-users"></i>
-                                            <span>Human Resource</span>
-                                            <p>(3 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
+                                 @endforeach
+
                             </div>
                         </div>
-                        <div class="cat-sec">
-                            <div class="row no-gape">
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-phone"></i>
-                                            <span>Telecommunications</span>
-                                            <p>(22 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-cutlery"></i>
-                                            <span>Restaurant / Food Service</span>
-                                            <p>(6 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-building"></i>
-                                            <span>Construction / Facilities</span>
-                                            <p>(3 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="p-category">
-                                        <a href="#" title="">
-                                            <i class="fa fa-user-md"></i>
-                                            <span>Health</span>
-                                            <p>(3 open positions)</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-12">
                         <div class="browse-all-cat">
                             <a href="#" title="">Browse All Categories</a>

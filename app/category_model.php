@@ -8,16 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class profile_model extends Model
 {
       protected $fillable = [
-        'objective',
-        'client_id', 
-        'client_document_id',
-        'name',
-        'email',
-        'skills',
-        'experience_year',
-        'experience_hotel',
-        'education',
         
+        'category_name',
 
       ];
    
@@ -27,5 +19,5 @@ class profile_model extends Model
      *
      * @var array
      */
-    protected $table = 'client_profile';
+    protected $table = 'master_category';
 }

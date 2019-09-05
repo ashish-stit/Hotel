@@ -22,13 +22,13 @@ aria-hidden="true">
                 </div> -->
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Objective</label>
-                    <input type="text" name="objective" class="form-control" id="addObj" maxlength="50">
+                    <textarea name="objective" class="form-control" id="addObj"></textarea>
                     <span id="ShowObjective"></span>                    
                 </div>
 
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Name</label>
-                    <input type="text" name="name" class="form-control" id="addName" maxlength="50">
+                    <input type="text" name="name" class="form-control" id="addName">
                     <span id="ShowName"></span>                    
                 </div>
 
@@ -40,32 +40,33 @@ aria-hidden="true">
 
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Skills</label>
-                    <input type="text" name="skills" class="form-control" id="addskills">
+                    <textarea type="text" name="skills" class="form-control" id="addskills">
+                    </textarea>
                     <span id="ShowSkill"></span>                    
                 </div>
 
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Experience Year</label>
-                    <input type="text" name="experience_year" class="form-control" id="addexp">
+                    <textarea type="text" name="experience_year" class="form-control" id="addexp"></textarea>
                     <span id="Showexp"></span>                    
                 </div>
 
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Experience Hotel</label>
-                    <input type="text" name="experience_hotel" class="form-control" id="addexphotel">
+                    <textarea type="text" name="experience_hotel" class="form-control" id="addexphotel"></textarea>
                     <span id="Showexphotel"></span>                    
                 </div>
 
                 <div class="md-form mb-5" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-name" style="margin-bottom: 10px;">Education</label>
-                    <input type="text" name="education" class="form-control" id="addeducation">
+                    <textarea type="text" name="education" class="form-control" id="addeducation"></textarea>
                     <span id="ShowEdu"></span>                    
                 </div>
 
                 <div class="md-form mb-4" style="margin-bottom: 10px;">
                     <label data-error="wrong" data-success="right" for="orangeForm-pass" style="margin-bottom: 10px;">Resume</label>
 
-                    <input type="file" name="resume" id="ResumeUpload" class="UploadResume" style="margin-bottom:10px;">
+                    <input type="file" name="image" id="ResumeUpload" class="UploadResume" style="margin-bottom:10px;">
                     <!-- <img id="ImgId" width="21%" height="100px"> -->
                     <span id="ResumeErrorMessage"></span>
                 </div>
@@ -95,9 +96,13 @@ aria-hidden="true">
             <h4 class="modal-title w-100 font-weight-bold" style="margin-top: 10px;">Update Profile</h4>
         </div>
         <div class="modal-body mx-3">
-          <form method="post" enctype="multipart/form-data" action="{{url('admin/saveProfileList')}}">
+    <form method="post" enctype="multipart/form-data" action="{{url('/updatingProfle')}}"> 
+        @csrf
             <div class="md-form mb-5">                   
                     <input type="hidden" name="id" class="form-control" id="id">                         
+                </div>
+                <div class="md-form mb-5">                   
+                    <input type="hidden" name="client_id" class="form-control" id="client_id">                         
                 </div>
                 <div class="md-form mb-5">                   
                     <input type="hidden" name="client_document_id" class="form-control" id="client_document_id">                         
@@ -145,16 +150,16 @@ aria-hidden="true">
                 <span id="ShowEdu"></span>                    
             </div>
 
-            <div class="md-form mb-4" style="margin-bottom: 10px;">
+            <!-- <div class="md-form mb-4" style="margin-bottom: 10px;">
                 <label data-error="wrong" data-success="right" for="orangeForm-pass" style="margin-bottom: 10px;">Resume</label>
 
-                <input type="file" name="resume" id="ResumeUpload" class="UploadResumes" style="margin-bottom:10px;">
-                <!-- <img id="ImgId" width="21%" height="100px"> -->
+                <input type="file" name="resume" id="uploadss" class="UploadResumes" style="margin-bottom:10px;">
+                <img id="ImgId" width="21%" height="100px">
                 <span id="ResumeErrorMessage"></span>
-            </div>
+            </div> -->
         </div>
         <div class="modal-footer d-flex justify-content-center" style="text-align: center">
-            <button class="btn btn-deep-orange" id="UpdateProfile"  
+            <button class="btn btn-deep-orange" id="updateProfDetails"  
             style="width:30%;letter-spacing: 1px;background-color:#08c;color: #fff; margin-bottom: 10px;">Update</button>
         </div>
     </form>
@@ -163,3 +168,22 @@ aria-hidden="true">
 </div>
 
 <!-- End Add Employee Image modal-->
+<!--Edit Profile-->
+<div class="modal fade" id="showProfileModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header text-center">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title w-100 font-weight-bold" style="margin-top: 10px;">Update Profile</h4>
+        </div>
+        <div class="modal-body mx-3">
+    <div>
+        {{$profile->id}}
+    </div>
+</div>
+</div>
+</div>

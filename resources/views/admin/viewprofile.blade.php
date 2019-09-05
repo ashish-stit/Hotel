@@ -24,18 +24,18 @@
 			</thead>
 			<tbody>
 				@foreach($view as $profile)
-				<tr>
-					<td>{{ $profile->id }}</td>
-					<td>{{ $profile->objective }}</td>
-					<td>{{ $profile->name }}</td>
-					<td>{{ $profile->email }}</td>
-					<td>{{ $profile->skills }}</td>
-					<td>{{ $profile->experience_year }}</td>
-					<td>{{ $profile->experience_hotel }}</td>
-					<td>{{ $profile->education }}</td>
-					<td>{{ $profile->resume }}</td>
+				<tr id="{{ $profile->id }}">
+					<td id="id">{{ $profile->id }}</td>
+					<td id="obj">{{ $profile->objective }}</td>
+					<td id="nam">{{ $profile->name }}</td>
+					<td id="emal">{{ $profile->email }}</td>
+					<td id="skll">{{ $profile->skills }}</td>
+					<td id="expyr">{{ $profile->experience_year }}</td>
+					<td id="exphotl">{{ $profile->experience_hotel }}</td>
+					<td id="edu">{{ $profile->education }}</td>
+					<td id="res"><img src="{{URL::asset('public/image/'.$profile->resume) }}" width="50px" height="50px"></td>
 					<td>
-						<a id="{{ $profile->id }}" class="editProfile" style="margin-right: 1rem; background: #337ab7; padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;">
+						<a id="updte_{{ $profile->id }}" class="editProfile" style="margin-right: 1rem; background: #337ab7; padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;">
 							<i class="fa fa-edit" style="font-size: 15px; color: #fff;"></i></a>
 
 							<a href="{{ url('/deleteProfile',$profile->id) }}" class="btn btn-danger removeProfile" style="padding: 2px 2rem; text-align: center; border-radius: 4px;cursor: pointer;"><i class="fa fa-trash"></i></a>
