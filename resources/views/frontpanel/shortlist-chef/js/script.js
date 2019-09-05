@@ -77,6 +77,16 @@ $(document).on('ready',function(){
         $('html').removeClass('no-scroll');
     });
 
+    /*postjob popup */
+    $('#postjob-popup').on('click', function(){
+        $('.postjob-popup-box').fadeIn('fast');
+        $('html').addClass('no-scroll');
+    });
+    $('.close-popup').on('click', function(){
+        $('.postjob-popup-box').fadeOut('fast');
+        $('html').removeClass('no-scroll');
+    });
+
     /*** QUICK POST SHARE ***/
     $('.select-user > span').on('click', function (){
         $('.select-user > span').removeClass('active');
