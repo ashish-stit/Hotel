@@ -279,3 +279,4 @@ $(window).on('load',function(){
     $('.page-loading').fadeOut();
 
 });
+

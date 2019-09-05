@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\profile_model;
@@ -94,5 +95,17 @@ class AdminController extends Controller
 		}
 	}
 	
-
+	public function searching(){
+		$profilesearchs = Input::get ( 'profilesearch' );
+		//dd($q);return false;
+		if($profilesearchs != ''){
+		$user = profile_model::where('experience_year','LIKE','%'.$profilesearchs.'%')->orWhere('education','LIKE','%'.$profilesearchs.'%')->get();
+		if(count($user) > 0){
+			return view('welcome')->withDetails($user)->withQuery ( $profilesearchs );
+		}
+		else {
+			return view ('welcome')->withMessage('No Details found. Try to search again !');
+		}
+	}
+	}
 }

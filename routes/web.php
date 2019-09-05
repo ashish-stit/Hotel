@@ -12,8 +12,8 @@
 */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','AdminController@index');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','AdminController@index');
 //Admin Controller
 Route::get('/admin/add', 'AdminController@dashboard')->name('admin.add');
 Route::get('/admin/registered', 'AdminController@adddocs')->name('admin.registered');
@@ -22,4 +22,6 @@ Route::post('/admin/saveProfileList', 'AdminController@storeProfile');
 Route::post('/admin/EditProfile','AdminController@EditProfiles');
 Route::post('/updatingProfle', 'AdminController@updateProfile');
 Route::get('/deleteProfile/{id}', 'AdminController@profileDelete')->name('/deleteProfile');
-Route::get('/category_details', 'CategoryController@categories')->name('category');
+Route::post('/search', 'AdminController@searching');
+//Category Chefs
+Route::get('/admin/userdetail', 'CategoryController@viewprofile');

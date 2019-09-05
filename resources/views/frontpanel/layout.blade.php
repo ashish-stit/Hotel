@@ -6,6 +6,8 @@
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
+          @include('auth.register')
+          @include('auth.login')
            @include('frontpanel.header')
            <div class="content-wrapper">
               @yield('content')
@@ -13,7 +15,10 @@
         </div>
       </div>
        <!--  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
-       <script src="{{ asset('public/js/ajax.js') }}"></script>
+      <script>
+            var webUrl = {!! json_encode(url('/')) !!}
+            ;
+        </script>
         <script src="{{ asset('public/js/jquery.min.js')}}" ></script>
 <script src="{{ asset('public/js/modernizr.js')}}" type="text/javascript"></script>
 <script src="{{ asset('public/js/script.js')}}" type="text/javascript"></script>
@@ -22,5 +27,6 @@
 <script src="{{ asset('public/js/slick.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('public/js/parallax.js')}}" type="text/javascript"></script>
 <script src="{{ asset('public/js/select-chosen.js')}}" type="text/javascript"></script>
+ <script src="{{ asset('public/js/ajax.js') }}"></script>
 </body>
 </html>

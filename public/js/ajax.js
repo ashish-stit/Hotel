@@ -16,7 +16,7 @@ $(document).on('click', '.editProfile', function () {
         success: function (data)
         {
             if (data.message == 'success') {
-             $("#showProfileModalForm").modal('show');
+             $("#EditProfileModalForm").modal('show');
              $("#client_id").val(data.prof_Edit.id);
              $("#client_document_id").val(data.prof_Edit.client_document_id);
              $("#addObjs").val(data.prof_Edit.objective);
@@ -92,32 +92,32 @@ $.ajax({
 
 });
 
+           
+$(document).on('click', '.viewProfiles', function () {
+  var employId = $(this).attr('id');
+  //alert(employId);
 
-$(document).on('click', '#PreviewProfile', function () {
-    alert('jshk');return false;
-    var id = $(this).attr('id');
-    //alert(img_Id);
 
-    $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: webUrl + '/category_details',
-        type: "get",
-        enctype:'multipart/form-data',
-        data: {id: id},
-        dataType: 'json',
-        
-        success: function (data)
+  $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+
+    url: webUrl + "/admin/userdetail",
+    type: "GET",
+    data: {previd: employId},
+    dataType: 'json',
+    success: function (data)
+    {
+        if (data.message == 'success') 
         {
-            if (data.message == 'success') {
-             $("#showProfileModalForm").modal('show');
-         } 
-         else {
-            alert(data.error);
-        }
+          $("#showProfileModalForm").modal('show');
+          $("#id").val(data.show_id.viewsid);
+        } 
+          else 
+          {
+        alert(data.error);
+        } 
     }
+    });
 });
-
-});
-

@@ -13,11 +13,12 @@
                                 <div class="job-search">
                                     <h3>The Easiest Way to Get Your New Job</h3>
                                     <span>Find Jobs, Employment & Career Opportunities</span>
-                                    <form>
+                                    <form method="post" action="{{ url('/search') }}" role="search">
+                                        {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
                                                 <div class="job-field">
-                                                    <input type="text" placeholder="Job title, keywords or company name" />
+                                                    <input type="text" name="profilesearch" placeholder="Job title, keywords or company name" />
                                                     <i class="fa fa-keyboard-o"></i>
                                                 </div>
                                             </div>
@@ -53,21 +54,27 @@
         <div class="block">
             <div class="container">
                        <div class="row">
+                      
                             <div class="row no-gape">
                             @foreach($details as $profile)
-
+                            
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="p-category">
+                                        
                                         <a title="">
                                             <img src="{{URL::asset('public/image/'.$profile->resume) }}" height="100px" width="100px">
                                             <span>{{$profile->objective}}</span>
-                                            <button type="submit" class="btn btn-primary ProfileView" id="PreviewProfile">More...</button>
+                                            <a id= "{{ $profile->id }}" class="viewProfiles">
+                                            More...</a>
                                         </a>
+
                                     </div>
+                                    
                                 </div>
                                  @endforeach
 
                             </div>
+                       
                         </div>
                     <div class="col-lg-12">
                         <div class="browse-all-cat">
@@ -399,48 +406,10 @@
 </div>
 <!---------post job pop up---------->
 
-<div class="account-popup-area postjob-popup-box">
-    <div class="account-popup">
-        <span class="close-popup"><i class="fa fa-close"></i></span>
-        <h3>Post Job</h3>
-       
-        <form>
-            <div class="cfield">
-                <input type="text" placeholder="Username" />
-                <i class="fa fa-user"></i>
-            </div>
-            <div class="cfield">
-                <input type="password" placeholder="********" />
-                <i class="fa fa-key"></i>
-            </div>
-            <div class="cfield">
-                <input type="text" placeholder="Email" />
-                <i class="fa fa-envelope-o"></i>
-            </div>
-            
-            <div class="cfield">
-                <input type="text" placeholder="Phone Number" />
-                <i class="fa fa-phone"></i>
-            </div>
-            <button type="submit">Signup</button>
-        </form>
-        <div class="extra-login">
-            <span>Or</span>
-            <div class="login-social">
-                <a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
-                <a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
 <!---popup for login and registration---->
 
 
-<div class="account-popup-area signup-popup-box">
+<!-- <div class="account-popup-area signup-popup-box">
     <div class="account-popup">
         <span class="close-popup"><i class="fa fa-close"></i></span>
         <h3>Sign Up</h3>
@@ -499,9 +468,9 @@
             </div>
         </div> -->
     </div>
-</div>
+<!-- </div> -->
 
-<div class="account-popup-area signin-popup-box">
+<!-- <div class="account-popup-area signin-popup-box">
     <div class="account-popup">
         <span class="close-popup"><i class="fa fa-close"></i></span>
         <h3>User Login</h3>
@@ -544,7 +513,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 @endsection
 
